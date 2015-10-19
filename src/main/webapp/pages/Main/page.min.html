@@ -27,6 +27,7 @@ Application.$controller("MainPageController", ["$scope", function ($scope) {
 <script id="Main.variables.json">
 var _MainPage_Variables_ ={
 	"Camera": {
+		"name": "Camera",
 		"owner": "Page",
 		"dataSet": {
 			"imagePath": "resources/images/imagelists/default-image.png"
@@ -46,6 +47,36 @@ var _MainPage_Variables_ ={
 		"vibrationtime": 2,
 		"category": "wm.DeviceVariable",
 		"_id": "wm-Camera-wm.DeviceVariable-1445242624689"
+	},
+	"deviceVariable1": {
+		"owner": "Page",
+		"dataSet": {
+			"coords": {
+				"latitude": 0,
+				"longitude": 0,
+				"altitude": 0,
+				"accuracy": 0,
+				"altitudeAccuracy": 0,
+				"heading": 0,
+				"speed": 0
+			},
+			"timestamp": 0
+		},
+		"dataBinding": {},
+		"service": "device",
+		"operation": "getCurrentGeoPosition",
+		"startUpdate": false,
+		"imageQuality": 80,
+		"imageEncodingType": "0",
+		"allowImageEdit": false,
+		"correctOrientation": true,
+		"saveToPhotoAlbum": false,
+		"geolocationHighAccuracy": true,
+		"geolocationMaximumAge": 3,
+		"geolocationTimeout": 5,
+		"vibrationtime": 2,
+		"category": "wm.DeviceVariable",
+		"_id": "wm-deviceVariable1-wm.DeviceVariable-1445243920978"
 	}
 }
 </script>
@@ -73,7 +104,7 @@ var _MainPage_Variables_ ={
                     <wm-gridcolumn columnwidth="4" name="gridcolumn18"></wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>
-            <wm-prefab prefabname="googlemaps" name="googlemaps1"></wm-prefab>
+            <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Variables.deviceVariable1.dataSet"></wm-prefab>
         </wm-page-content>
     </wm-content>
 </wm-page>
